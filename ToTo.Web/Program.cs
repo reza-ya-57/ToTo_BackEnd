@@ -1,4 +1,6 @@
 
+using ToTo.Web.Configurations;
+
 namespace ToTo.Web
 {
     public class Program
@@ -12,7 +14,10 @@ namespace ToTo.Web
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            builder.Services.AddSwaggerConfiguration();
+
+            // add layer configurations
+            builder.Services.AddLayerServices();
 
             var app = builder.Build();
 
